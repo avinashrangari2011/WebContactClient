@@ -1,0 +1,49 @@
+﻿@model WebContactClient.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Contact Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contact Details</h2>
+
+<fieldset>
+    <legend>Contact Details</legend>
+    <table>
+        <tr>
+            <td colspan="2">
+                @Html.HiddenFor(model => model.ContactID)
+            </td>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.FirstName): </td>
+            <td>@Html.DisplayFor(model => model.FirstName)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.LastName): </td>
+            <td>@Html.DisplayFor(model => model.LastName)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Email): </td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Phone): </td>
+            <td>@Html.DisplayFor(model => model.Phone)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.StatusDesc): </td>
+            <td>@Html.DisplayFor(model => model.StatusDesc)</td>
+        </tr>
+
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditContact", new { aintContactID = Model.ContactID }) |
+    @Html.ActionLink("Back to List", "ContactList")
+</p>
